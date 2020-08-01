@@ -1,0 +1,30 @@
+<html>
+<head>
+    <title>Vue.js Pet Depot</title>
+    <script src="../public/assets/vue.js"></script>
+    <link rel="stylesheet" type="text/css" href="assets/css/app.css">
+    <link rel="stylesheet" type="text/css" href="../public/assets/bootstrap.min.css">
+</head>
+<body>
+<div id="app">
+    <header v-text="sitename"></header>
+<!--    <p>Welcome to {{ sitename }}</p>-->
+    <main>
+        <div class="row">
+            <div class="col-md-4  col-md-offset-1">
+                <figure>
+                    <img v-bind:src="product.image">
+                </figure>
+            </div>
+            <div class="col-md-6 description">
+                <h1 v-text="product.title.toUpperCase()"></h1>
+                <p v-html="product.description"></p>
+                <p class="price">{{ product.price | formatPrice }}</p>
+            </div>
+        </div>
+    </main>
+</div>
+<script type="text/javascript" src="life-cycle-hooks.js">
+</script>
+</body>
+</html>
